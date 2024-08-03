@@ -1,8 +1,22 @@
+<!--<resources>-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">-->
+<!--        <item name="colorPrimary">@color/dark_background</item>-->
+<!--        <item name="colorPrimaryDark">@color/dark_background</item>-->
+<!--        <item name="colorAccent">@color/green</item>-->
+<!--    </style>-->
+<!--</resources>-->
+
+
 <resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">#411414</item> <!-- Change this to your desired toolbar color -->
+        <item name="colorPrimaryDark">#333333</item> <!-- Change this to your desired status bar color -->
+        <item name="colorAccent">#000000</item>
+
+
     </style>
 
 </resources>
