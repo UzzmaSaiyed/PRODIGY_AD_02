@@ -127,22 +127,36 @@ public class MainActivity extends AppCompatActivity {
     public void deleteTask(View view) {
         View parent = (View) view.getParent();
         TextView taskTextView = parent.findViewById(R.id.task_title);
-        String task = taskTextView.getText().toString().replace("[Completed] ", "");
-        SQLiteDatabase db = null;
-        try {
-            db = mHelper.getWritableDatabase();
-            db.delete(TaskContract.TaskEntry.TABLE, TaskContract.TaskEntry.COL_TASK_TITLE + " = ?", new String[]{task});
-            Toast.makeText(MainActivity.this, "Task deleted", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            Log.e(TAG, "Error while trying to delete task from database", e);
-            Toast.makeText(MainActivity.this, "Error deleting task", Toast.LENGTH_SHORT).show();
-        } finally {
-            if (db != null) {
-                db.close();
-            }
-            updateUI();
-        }
+        final String task = taskTextView.getText().toString().replace("[Completed] ", "");
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("Delete Task")
+                .setMessage("Are you sure you want to delete this task?")
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SQLiteDatabase db = null;
+                        try {
+                            db = mHelper.getWritableDatabase();
+                            db.delete(TaskContract.TaskEntry.TABLE, TaskContract.TaskEntry.COL_TASK_TITLE + " = ?", new String[]{task});
+                            Toast.makeText(MainActivity.this, "Task deleted", Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            Log.e(TAG, "Error while trying to delete task from database", e);
+                            Toast.makeText(MainActivity.this, "Error deleting task", Toast.LENGTH_SHORT).show();
+                        } finally {
+                            if (db != null) {
+                                db.close();
+                            }
+                            updateUI();
+                        }
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .create();
+
+        dialog.show();
     }
+
 
     public void markTaskCompleted(View view) {
         View parent = (View) view.getParent();

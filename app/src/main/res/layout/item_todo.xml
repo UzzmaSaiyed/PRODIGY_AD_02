@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Completed"
+        android:drawableStart="@android:drawable/checkbox_on_background"
         android:textColor="@android:color/holo_green_dark"
         android:visibility="gone"
         android:layout_gravity="center_vertical"
@@ -33,27 +34,29 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="Complete"
+        android:padding="5dp"
         android:textColor="#FFFFFF"
         android:background="@drawable/btn_background_complete"
+        android:drawableStart="@android:drawable/checkbox_off_background"
         android:layout_marginEnd="8dp"/>
 
     <Button
         android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="Edit"
         android:textColor="#FFFFFF"
         android:background="@drawable/btn_background_edit"
+        android:drawableStart="@android:drawable/ic_menu_edit"
         android:layout_marginEnd="8dp"/>
 
     <Button
         android:id="@+id/btn_delete"
-        android:layout_width="wrap_content"
+        android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:background="@drawable/btn_background_delete"
-        android:text="Delete"
+        android:drawableStart="@android:drawable/ic_menu_delete"
         android:textColor="#FFFFFF" />
 
 </LinearLayout>
