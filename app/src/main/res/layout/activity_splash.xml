@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFC1C1">
@@ -9,18 +10,17 @@
         android:id="@+id/splash_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_marginTop="40dp"
-    android:layout_marginBottom="20dp" />
-
-    <!-- Add elevation for shadow effect -->
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcome_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/splash_icon"
-        android:layout_alignParentEnd="true"
         android:layout_marginEnd="63dp"
         android:layout_marginBottom="71dp"
         android:background="@drawable/text_background"
@@ -30,17 +30,70 @@
         android:text="TodoList Welcomes You"
         android:textColor="#A3053B"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/splash_icon"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="290dp"
-        android:layout_marginBottom="152dp"
+        android:layout_width="347dp"
+        android:layout_height="208dp"
         android:elevation="4dp"
-        app:srcCompat="@drawable/to_do_list" /> <!-- Add elevation for shadow effect -->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_icon"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/to_do_list" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#FFC1C1">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/splash_icon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginBottom="20dp" />-->
+
+<!--    &lt;!&ndash; Add elevation for shadow effect &ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/welcome_message"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_above="@+id/splash_icon"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="63dp"-->
+<!--        android:layout_marginBottom="71dp"-->
+<!--        android:background="@drawable/text_background"-->
+<!--        android:elevation="4dp"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="TodoList Welcomes You"-->
+<!--        android:textColor="#A3053B"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginTop="290dp"-->
+<!--        android:layout_marginBottom="152dp"-->
+<!--        android:elevation="4dp"-->
+<!--        app:srcCompat="@drawable/to_do_list" /> &lt;!&ndash; Add elevation for shadow effect &ndash;&gt;-->
+
+<!--</RelativeLayout>-->
